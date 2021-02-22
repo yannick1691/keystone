@@ -18295,7 +18295,7 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-nuxt@^2.14.12:
+nuxt@^2.15.1:
   version "2.15.1"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-2.15.1.tgz#b7ee2f9defb96716649d80d4841ec6b59f62628c"
   integrity sha512-SJhJXDxI0ZdCKY2pixYFyNHTzswKsDg0lv3C2V4OpPubMq6nXqbRifOb8+qDXeUxAui3V+AMcz/fctUgcFvnnQ==
