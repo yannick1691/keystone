@@ -40,7 +40,7 @@
     "@emotion/core": "^10.1.1",
     "@keystonejs/field-views-loader": "^6.0.1",
     "@keystonejs/fields": "^22.0.0",
-    "@keystonejs/session": "^8.1.1",
+    "@keystonejs/session": "^8.2.0",
     "@keystonejs/utils": "^6.0.0",
     "@primer/octicons-react": "^11.3.0",
     "@types/react": "^17.0.2",

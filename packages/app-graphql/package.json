@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@keystonejs/app-graphql-playground": "^5.1.9",
-    "@keystonejs/session": "^8.1.1",
+    "@keystonejs/session": "^8.2.0",
     "@keystonejs/utils": "^6.0.0",
     "graphql": "^15.5.0",
     "graphql-upload": "^11.0.0",
