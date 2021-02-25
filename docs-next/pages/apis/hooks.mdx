@@ -9,15 +9,11 @@ This document describes:
 - How and where to configure hooks of different types
 - The specific arguments and usage information of different hook sets
 
-For a more general overview of the concepts, patterns and function of the Keystone hook system, see the
-[hooks guide](/docs/guides/hooks.md).
-
-Note: For performance reasons relationship fields are not fully resolved by hooks, and will return an array of ids. To fetch data from a relationship field, a second query is required. To do this inside a hook function use the `context.executeGraphQL()` method.
+For a more general overview of the concepts, patterns and function of the Keystone hook system, see the [hooks guide](/docs/guides/hooks.md).
 
 ## Hook types
 
-Hooks can be categorised into four [types](/docs/guides/hooks.md#hook-type)
-depending on where in the list schema they're attached:
+Hooks can be categorised into two [types](/docs/guides/hooks.md#hook-type) depending on where in the list schema they're attached:
 
 - [List hooks](#list-hooks)
 - [Field hooks](#field-hooks)
@@ -27,28 +23,49 @@ Any differences are called out in the documentation below.
 
 ### List hooks
 
-List hooks can be defined by the system developer by specifying the `hooks` attribute of a list configuration when calling `createList()`.
 Hooks for the `create`, `update` and `delete` operations are available.
 
 #### Usage
 
-```js
-keystone.createList('User', {
-  fields: {
-    name: { type: Text },
-  },
-  hooks: {
-    // Hooks for create and update operations
-    resolveInput: async (...) => {...},
-    validateInput: async (...) => {...},
-    beforeChange: async (...) => {...},
-    afterChange: async (...) => {...},
+```typescript
+import { config, createSchema, list } from '@keystone-next/keystone/schema';
+import { text } from '@keystone-next/fields';
 
-    // Hooks for delete operations
-    validateDelete: async (...) => {...},
-    beforeDelete: async (...) => {...},
-    afterDelete: async (...) => {...},
-  },
+export default config({
+  lists: createSchema({
+    ListName: list({
+      hooks: {
+        // Hooks for create and update operations
+        resolveInput: async args => { /* ... */ },
+        validateInput: async args => { /* ... */ },
+        beforeChange: async args => { /* ... */ },
+        afterChange: async args => { /* ... */ },
+
+        // Hooks for delete operations
+        validateDelete: async args => { /* ... */ },
+        beforeDelete: async args => { /* ... */ },
+        afterDelete: async args => { /* ... */ },
+      },
+      fields: {
+        fieldName: text({
+          hooks: {
+            // Hooks for create and update operations
+            resolveInput: async args => { /* ... */ },
+            validateInput: async args => { /* ... */ },
+            beforeChange: async args => { /* ... */ },
+            afterChange: async args => { /* ... */ },
+
+            // Hooks for delete operations
+            validateDelete: async args => { /* ... */ },
+            beforeDelete: async args => { /* ... */ },
+            afterDelete: async args => { /* ... */ },
+          }
+        })
+      }
+    }),
+    /* ... */
+  }),
+  /* ... */
 });
 ```
 
