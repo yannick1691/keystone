@@ -52,6 +52,8 @@ export default config({
 
 ### resolveInput
 
+The `resolveInput` function is used to modify or augment the `data` values passed in to a `create` or `update` operation.
+
 **Used to modify the `resolvedData`.**
 
 - Invoked after access control and field defaults are applied
@@ -90,6 +92,8 @@ const resolveInput = async ({
 ```
 
 ### validateInput
+
+The `validateInput` function is used to validate the `data` values passed in to a `create` or `update` operation.
 
 **Used to verify the `resolvedData` is valid.**
 
@@ -134,6 +138,8 @@ const validateInput = ({
 
 ### beforeChange
 
+The `beforeChange` function is used to perform side effects just before the data for a `create` or `update` operation is saved to the database.
+
 **Used to cause side effects before the primary operation is executed.**
 
 - Invoked after all `validateInput` hooks have resolved
@@ -172,6 +178,8 @@ const beforeChange = async ({
 ```
 
 ### afterChange
+
+The `afterChange` function is used to perform side effects just after the data for a `create` or `update` operation is saved to the database.
 
 **Used to cause side effects after the primary operation is executed.**
 
@@ -216,6 +224,8 @@ const afterChange = async ({
 
 ### validateDelete
 
+The `validateDelete` function is used to validate the `data` values passed in to a `delete` operation.
+
 **Used to verify a delete operation is valid**, i.e. will maintain data consitency.
 
 - Invoked after access control has been tested
@@ -254,6 +264,8 @@ const validateDelete = async ({
 
 ### beforeDelete
 
+The `beforeDelete` function is used to perform side effects just before the data for a `delete` operation is saved to the database.
+
 **Used to cause side effects before the delete operation is executed.**
 
 - Invoked after all `validateDelete` hooks have resolved
@@ -288,6 +300,8 @@ const beforeDelete = async ({
 ```
 
 ### afterDelete
+
+The `afterDelete` function is used to perform side effects just after the data for a `create` or `update` operation is saved to the database.
 
 **Used to cause side effects after the delete operation is executed.**
 
