@@ -19,29 +19,57 @@ export default config({
     ListName: list({
       hooks: {
         // Hooks for create and update operations
-        resolveInput: async args => { /* ... */ },
-        validateInput: async args => { /* ... */ },
-        beforeChange: async args => { /* ... */ },
-        afterChange: async args => { /* ... */ },
+        resolveInput: async args => {
+          /* ... */
+        },
+        validateInput: async args => {
+          /* ... */
+        },
+        beforeChange: async args => {
+          /* ... */
+        },
+        afterChange: async args => {
+          /* ... */
+        },
 
         // Hooks for delete operations
-        validateDelete: async args => { /* ... */ },
-        beforeDelete: async args => { /* ... */ },
-        afterDelete: async args => { /* ... */ },
+        validateDelete: async args => {
+          /* ... */
+        },
+        beforeDelete: async args => {
+          /* ... */
+        },
+        afterDelete: async args => {
+          /* ... */
+        },
       },
       fields: {
         fieldName: text({
           hooks: {
             // Hooks for create and update operations
-            resolveInput: async args => { /* ... */ },
-            validateInput: async args => { /* ... */ },
-            beforeChange: async args => { /* ... */ },
-            afterChange: async args => { /* ... */ },
+            resolveInput: async args => {
+              /* ... */
+            },
+            validateInput: async args => {
+              /* ... */
+            },
+            beforeChange: async args => {
+              /* ... */
+            },
+            afterChange: async args => {
+              /* ... */
+            },
 
             // Hooks for delete operations
-            validateDelete: async args => { /* ... */ },
-            beforeDelete: async args => { /* ... */ },
-            afterDelete: async args => { /* ... */ },
+            validateDelete: async args => {
+              /* ... */
+            },
+            beforeDelete: async args => {
+              /* ... */
+            },
+            afterDelete: async args => {
+              /* ... */
+            },
           },
         }),
       },
@@ -64,15 +92,15 @@ The result is passed to [the next function in the execution order](/docs/guides/
 
 #### Arguments
 
-| Argument        | Type                    | Description                                                               |
-| :-------------- | :---------------------- | :------------------------------------------------------------------------ |
-| `operation`     | `String`                | The operation being performed (i.e. `create` or `update`)                  |
-| `existingItem`  | `Object` or `undefined` | The current stored item (or `undefined` for `create` operations)          |
-| `originalInput` | `Object`                | The data received by the GraphQL mutation                                 |
-| `resolvedData`  | `Object`                | The data received by the GraphQL mutation plus defaults values            |
-| `context`       | `KeystoneContext`       | The [`KeystoneContext`](./context) for this request                       |
-| `listKey`       | `String`                | The key for the list being operated on                                    |
-| `fieldPath`     | `String`                | The path for the field being operated on (applicable to field hooks only) |
+| Argument        | Description                                                               |
+| :-------------- | :------------------------------------------------------------------------ |
+| `operation`     | The CRU operation being performed (`'create'`, `'update'`, `'delete'`)    |
+| `existingItem`  | The current stored item (or `undefined` for `create` operations)          |
+| `originalInput` | The data received by the GraphQL mutation                                 |
+| `resolvedData`  | The data received by the GraphQL mutation plus defaults values            |
+| `context`       | The [`KeystoneContext`](./context) for this request                       |
+| `listKey`       | The key for the list being operated on                                    |
+| `fieldPath`     | The path for the field being operated on (applicable to field hooks only) |
 
 #### Usage
 
@@ -105,17 +133,17 @@ Return values are ignored.
 
 #### Arguments
 
-| Argument                  | Type                    | Description                                                                               |
-| :------------------------ | :---------------------- | :---------------------------------------------------------------------------------------- |
-| `operation`               | `String`                | The operation being performed (i.e. `create` or `update`)                                  |
-| `existingItem`            | `Object` or `undefined` | The current stored item (or `undefined` for `create` operations)                          |
-| `originalInput`           | `Object`                | The data received by the GraphQL mutation                                                 |
-| `resolvedData`            | `Object`                | The data received by the GraphQL mutation plus defaults values                            |
-| `context`                 | `KeystoneContext`       | The [`KeystoneContext`](./context) for this request                                       |
-| `addFieldValidationError` | `Function`              | Used to set a field validation error (applicable to field hooks only); accepts a `String` |
-| `addValidationError`      | `Function`              | Used to set a validation error (applicable to list hooks only); accepts a `String`        |
-| `listKey`                 | `String`                | The key for the list being operated on                                                    |
-| `fieldPath`               | `String`                | The path for the field being operated on (applicable to field hooks only)                 |
+| Argument                  | Description                                                                               |
+| :------------------------ | :---------------------------------------------------------------------------------------- |
+| `operation`               | The CRU operation being performed (`'create'`, `'update'`, `'delete'`)                    |
+| `existingItem`            | The current stored item (or `undefined` for `create` operations)                          |
+| `originalInput`           | The data received by the GraphQL mutation                                                 |
+| `resolvedData`            | The data received by the GraphQL mutation plus defaults values                            |
+| `context`                 | The [`KeystoneContext`](./context) for this request                                       |
+| `addFieldValidationError` | Used to set a field validation error (applicable to field hooks only); accepts a `String` |
+| `addValidationError`      | Used to set a validation error (applicable to list hooks only); accepts a `String`        |
+| `listKey`                 | The key for the list being operated on                                                    |
+| `fieldPath`               | The path for the field being operated on (applicable to field hooks only)                 |
 
 #### Usage
 
@@ -150,15 +178,15 @@ Return values are ignored.
 
 #### Arguments
 
-| Argument        | Type                    | Description                                                               |
-| :-------------- | :---------------------- | :------------------------------------------------------------------------ |
-| `operation`     | `String`                | The operation being performed (i.e. `create` or `update`)                  |
-| `existingItem`  | `Object` or `undefined` | The current stored item (or `undefined` for `create` operations)          |
-| `originalInput` | `Object`                | The data received by the GraphQL mutation                                 |
-| `resolvedData`  | `Object`                | The data received by the GraphQL mutation plus defaults values            |
-| `context`       | `KeystoneContext`       | The [`KeystoneContext`](./context) for this request                       |
-| `listKey`       | `String`                | The key for the list being operated on                                    |
-| `fieldPath`     | `String`                | The path for the field being operated on (applicable to field hooks only) |
+| Argument        | Description                                                               |
+| :-------------- | :------------------------------------------------------------------------ |
+| `operation`     | The CRU operation being performed (`'create'`, `'update'`, `'delete'`)    |
+| `existingItem`  | The current stored item (or `undefined` for `create` operations)          |
+| `originalInput` | The data received by the GraphQL mutation                                 |
+| `resolvedData`  | The data received by the GraphQL mutation plus defaults values            |
+| `context`       | The [`KeystoneContext`](./context) for this request                       |
+| `listKey`       | The key for the list being operated on                                    |
+| `fieldPath`     | The path for the field being operated on (applicable to field hooks only) |
 
 #### Usage
 
@@ -195,15 +223,15 @@ Return values are ignored.
 
 #### Arguments
 
-| Argument        | Type                    | Description                                                               |
-| :-------------- | :---------------------- | :------------------------------------------------------------------------ |
-| `operation`     | `String`                | The operation being performed (i.e. `create` or `update`)                  |
-| `existingItem`  | `Object` or `undefined` | The previously stored item (or `undefined` for `create` operations)       |
-| `originalInput` | `Object`                | The data received by the GraphQL mutation                                 |
-| `updatedItem`   | `Object`                | The new/currently stored item                                             |
-| `context`       | `KeystoneContext`       | The [`KeystoneContext`](./context) for this request                       |
-| `listKey`       | `String`                | The key for the list being operated on                                    |
-| `fieldPath`     | `String`                | The path for the field being operated on (applicable to field hooks only) |
+| Argument        | Description                                                               |
+| :-------------- | :------------------------------------------------------------------------ |
+| `operation`     | The CRU operation being performed (`'create'`, `'update'`, `'delete'`)    |
+| `existingItem`  | The previously stored item (or `undefined` for `create` operations)       |
+| `originalInput` | The data received by the GraphQL mutation                                 |
+| `updatedItem`   | The new/currently stored item                                             |
+| `context`       | The [`KeystoneContext`](./context) for this request                       |
+| `listKey`       | The key for the list being operated on                                    |
+| `fieldPath`     | The path for the field being operated on (applicable to field hooks only) |
 
 #### Usage
 
@@ -235,15 +263,15 @@ Should throw or register errors with `addFieldValidationError(<String>)` if the 
 
 #### Arguments
 
-| Argument                  | Type              | Description                                                                               |
-| :------------------------ | :---------------- | :---------------------------------------------------------------------------------------- |
-| `operation`               | `String`          | The operation being performed (`delete` in this case)                                     |
-| `existingItem`            | `Object`          | The current stored item                                                                   |
-| `context`                 | `KeystoneContext` | The [`KeystoneContext`](./context) for this request                                       |
-| `addFieldValidationError` | `Function`        | Used to set a field validation error (applicable to field hooks only); accepts a `String` |
-| `addValidationError`      | `Function`        | Used to set a validation error (applicable to list hooks only); accepts a `String`        |
-| `listKey`                 | `String`          | The key for the list being operated on                                                    |
-| `fieldPath`               | `String`          | The path for the field being operated on (applicable to field hooks only)                 |
+| Argument                  | Description                                                                               |
+| :------------------------ | :---------------------------------------------------------------------------------------- |
+| `operation`               | The CRU operation being performed ( `'delete'`)                                           |
+| `existingItem`            | The current stored item                                                                   |
+| `context`                 | The [`KeystoneContext`](./context) for this request                                       |
+| `addFieldValidationError` | Used to set a field validation error (applicable to field hooks only); accepts a `String` |
+| `addValidationError`      | Used to set a validation error (applicable to list hooks only); accepts a `String`        |
+| `listKey`                 | The key for the list being operated on                                                    |
+| `fieldPath`               | The path for the field being operated on (applicable to field hooks only)                 |
 
 #### Usage
 
@@ -276,13 +304,13 @@ Return values are ignored.
 
 #### Arguments
 
-| Argument       | Type              | Description                                                               |
-| :------------- | :---------------- | :------------------------------------------------------------------------ |
-| `operation`    | `String`          | The operation being performed (`delete` in this case)                     |
-| `existingItem` | `Object`          | The current stored item                                                   |
-| `context`      | `KeystoneContext` | The [`KeystoneContext`](./context) for this request                       |
-| `listKey`      | `String`          | The key for the list being operated on                                    |
-| `fieldPath`    | `String`          | The path for the field being operated on (applicable to field hooks only) |
+| Argument       | Description                                                               |
+| :------------- | :------------------------------------------------------------------------ |
+| `operation`    | The CRU operation being performed ( `'delete'`)                           |
+| `existingItem` | The current stored item                                                   |
+| `context`      | The [`KeystoneContext`](./context) for this request                       |
+| `listKey`      | The key for the list being operated on                                    |
+| `fieldPath`    | The path for the field being operated on (applicable to field hooks only) |
 
 #### Usage
 
@@ -315,13 +343,13 @@ Return values are ignored.
 
 #### Arguments
 
-| Argument       | Type              | Description                                                               |
-| :------------- | :---------------- | :------------------------------------------------------------------------ |
-| `operation`    | `String`          | The operation being performed (`delete` in this case)                     |
-| `existingItem` | `Object`          | The previously stored item, now deleted                                   |
-| `context`      | `KeystoneContext` | The [`KeystoneContext`](./context) for this request                       |
-| `listKey`      | `String`          | The key for the list being operated on                                    |
-| `fieldPath`    | `String`          | The path for the field being operated on (applicable to field hooks only) |
+| Argument       | Description                                                               |
+| :------------- | :------------------------------------------------------------------------ |
+| `operation`    | The CRU operation being performed (`'delete'`)                            |
+| `existingItem` | The previously stored item, now deleted                                   |
+| `context`      | The [`KeystoneContext`](./context) for this request                       |
+| `listKey`      | The key for the list being operated on                                    |
+| `fieldPath`    | The path for the field being operated on (applicable to field hooks only) |
 
 #### Usage
 
